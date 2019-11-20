@@ -1,0 +1,4 @@
+.htaccess
+vendor
+node_modules
+test.php
