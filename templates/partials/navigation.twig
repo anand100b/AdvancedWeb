@@ -1,0 +1,17 @@
+<section class ="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
+<a href="index.php"class="navbar-brand">Shop</a>
+<button class="navbar-toggler" data-target = "#main-nav" data-toggle="collapse">
+<span class="navbar-toggler-icon"></span>
+</button>
+<form class="form-inline" method="get" action="search.php">
+<input type="search" name="query" placeholder="Search our catalogue" class="form-control" value="">
+<button class="submit" class="btn btn-primary">Search</button>
+</form>
+
+<div class="collapse navbar-collapse" id="main-nav">
+<nav class ="nav navbar-nav ml-auto">
+{% for item in navigation %}
+<a class="nav-link" href="{{item.link}}">{{item.name}}</a>
+{% endfor %}
+
+</section>
