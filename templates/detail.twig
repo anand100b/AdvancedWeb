@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang ="en">
+    <head>
+    <title>{{title}}</title>
+    <meta name ="viewport" content="width=device-width,initial-scale=1">
+    <link href ="node_modules/bootstrap/dist/css/bootstrap.css" rel ="stylesheet">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src ="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+
+            <div class ="row">
+                <div class="col-md-6">
+                {% if detail.images | length == 1 %}
+                {% for image in detail.images %}
+                <img src="images/products/{{image}}" class="img-fluid">
+                {% endfor %}
+                {% else %}
+                <div class="carousel slide " data-ride="carousel" id="detail-carousel">
+                <div class="carousel-inner">
+                {% for image in detail.images %}
+                {% set active = (loop.index == 1 ) ? 'active' : '' %}
+                <div class="carousel-item {{active}}">
+                <img src="images/products/{{image}}" class="img-fluid">
+                </div>
+                {% endfor %}
+                </div>
+                {% endif %}
+                </div>
+                <div class ="col-md-4">
+                <h3>{{detail.product.name}}</h3>
+                <h5>{{detail.product.price}}</h5>
+                <p>{{detail.product.description}}</p>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+    </html>

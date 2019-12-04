@@ -8,14 +8,14 @@ class Database{
 protected $connection;
 protected function __construct(){
     $this ->host = getenv('host');
-    $this ->user = getnv('user');
-    $this ->password=getnv('password');
+    $this ->user = getenv('user');
+    $this ->password=getenv('password');
     $this ->database = getenv('database');
 
 $this ->connection = mysqli_connect(
     $this->host,
     $this->user,
-    $this->password10,
+    $this->password ,
  $this->database);
 }
 }
